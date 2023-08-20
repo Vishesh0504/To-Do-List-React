@@ -1,0 +1,15 @@
+.container{
+	display: grid;
+	grid-template-columns:1fr 1fr;
+}
+
+h1{
+	font-size:1.5em;
+	color:#00ce7c;
+	margin-bottom: 0.3em;
+}
+
+.tasks{
+	position: absolute;
+	left:1em;
+}

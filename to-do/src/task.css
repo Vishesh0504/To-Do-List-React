@@ -1,0 +1,86 @@
+
+input[type="checkbox"]{
+	  position: relative;
+	  top:0.05em;
+	  appearance: none;
+	  background-color:transparent;
+	  margin: 0;
+	  font: inherit;
+	  color: currentColor;
+	  width: 1.16em;
+	  height: 1.15em;
+	  border: 0.15em solid #8C3AEE;
+	  border-radius: 0.15em;
+	  transform: translateY(0.075em);
+	  display: grid;
+  	  place-content: center;
+  	  margin-left: 1em;
+  	  margin-right:0.4em;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  bottom:0.15em;
+  left:0.25em;
+  width: 0.35em;
+  height: 0.7em;
+  transform: scale(0);
+  transition: 200ms all ease-in-out;
+  background-color: transparent;
+  border:0.16em solid #00df87;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg);
+  opacity:0;
+
+}
+
+input[type="checkbox"]:checked::before {
+  opacity: 1;
+}
+
+.list{
+	display: flex;
+	flex:wrap;
+	font-size: 1.2em;
+}
+
+
+.list + .list {
+  margin-top: 0.23em;
+}
+
+/*.checkmark{
+	position: relative;
+	top: 0.2em;
+	left:0.5em;  
+	height: 1em;
+	width: 1em;
+	background-color:transparent;
+	border: 0.15em groove #8C3AEE;
+	border-radius: 0.2em;
+	transition: all 0.4s ease;
+	cursor:pointer;
+	margin-right: 0.7em;
+}
+
+.checkmark::before{
+	content: "";
+	position: absolute;
+	top: 0.1em;
+	left: 0.3em;
+	display: block;
+	width: 0.2em;
+	height: 0.4em;
+	border:0.12em solid #FFFF30;
+	border-top: 0;
+	border-left: 0;
+	transform: rotate(45deg);
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+input[type="checkbox"]:checked::before {
+  opacity:1;
+}*/
