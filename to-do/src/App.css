@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+	background-color: #060608;
+	color:#fff;
+	font-family: 'Bricolage Grotesque', sans-serif;
+	font-size:1.5rem;
+
+}
+
+.body{
+	position: absolute;
+	top:6em;
+	left:12em;
+}
+
+.linebreak{
+	width:70vw;
+	border-width: 0.25rem;
+	border-color: #009f60;
+}
+
+
+

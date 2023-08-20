@@ -1,0 +1,15 @@
+
+.heading{
+	position: relative;
+	font-size: 2em;
+	padding-bottom:0.3em;
+	caret-color: #9578d3;
+}
+
+.heading > input{
+	border:none;
+	outline:none ;
+	position:relative;
+	background-color: transparent;
+	font-size: 1.2em;
+}
