@@ -1,4 +1,4 @@
-
+import 'animate.css';
 import './App.css';
 import React,{Component} from 'react';
 import InputBar from "./inputbar";
