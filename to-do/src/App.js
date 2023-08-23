@@ -1,48 +1,38 @@
 import 'animate.css';
 import './App.css';
-import React,{Component} from 'react';
+import React,{ useState } from 'react';
 import InputBar from "./inputbar";
 import Heading from "./heading";
 import Body from "./body";
 
-class App extends Component {
+
+let nextId=0;
+
+export default function App(){
+  const [doing,setDoing] = useState([]);
+  const [completed,setCompleted] =useState([]);
+  
+  
+  function handleAddToDo(input){
+      if(input.length>0)
+      {
+        setDoing([
+        ...doing,
+        {id:nextId++, task:input,done:false},
+        ])
+        console.log(doing);
+      }
+
       
-      constructor(props){
-        super(props);
-        this.state ={
-          inptext:"",
-          tasks:[]
-        }
-      };
+  }
 
-    inpChange =(event)=>{
-      this.setState({inptext:event.target.value});
-    }
+  return(
+    <div className="body">
+      <Heading/>
+      <hr className="linebreak"/>
+      <InputBar handleAddToDo={handleAddToDo}/>
+      <Body doing={doing} completed={completed}/>
+    </div>
 
-    taskInp =(event)=>{
-        if(this.state.inptext.trim() !== "")
-        {
-          this.setState(prevState=>(
-          {
-            tasks:[...prevState.tasks,prevState.inptext],
-            inptext:""
-          }));
-        }
-    };
-    render()
-    {
-      return(
-        <>
-        <div className="body">
-            <Heading  text ="Untitled" />
-            <hr className="linebreak "/>
-            <InputBar  inpChange={this.inpChange} taskInp={this.taskInp} inptext={this.state.inptext}/>
-            <Body tasks={this.state.tasks} />
-         </div>  
-        </>  
-        );
-    };
-    
+  );
 }
-
-export default App;
