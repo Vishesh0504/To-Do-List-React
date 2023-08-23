@@ -1,15 +1,18 @@
-import React from 'react';
-
+import { useState } from 'react';
 import "./heading.css";
 
-let heading = ({text})=>{
-	return(
-		<div className="heading" >
-			<input 
-			type="text"
-			placeholder ={text}/>
-		</div>
-		);
-}
+export default function Heading(){
+	let [title, setTitle] = useState('');
 
-export default heading;
+	return(
+		<div className="heading">
+			<input
+			type = "text"
+			placeholder ="Untitled"
+			onChange = {
+				(e)=>{setTitle(title=e.target.value)}
+			}
+			/>
+		</div>
+		)
+}

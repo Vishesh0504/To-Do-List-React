@@ -1,4 +1,4 @@
-.input{
+.inputbar > input{
 	border:none;
 	outline:none ;
 	position:relative;
@@ -6,7 +6,7 @@
 	font-size: 1.2em;
 }
 
-.addtsk{
+button{
 	font-size: 0.7em;
 	color:#00ce7c;
 	font-weight: 1000;
@@ -19,7 +19,7 @@
 	transition: all 300ms ease-in-out;
 }
 
-.addtsk:hover{
+button:hover{
 	transform: scale(1.15);
 	background-color: #00ce7c;
 	color:black;

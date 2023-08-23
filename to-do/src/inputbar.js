@@ -1,28 +1,33 @@
-import React from 'react';
+import React,{useState} from 'react';
 import "./inputbar.css";
-let inpbar = ({inpChange,taskInp,inptext})=>{
+
+export default function InputBar({handleAddToDo}){
+	const [inp,setInp] =useState('');
+
 	return(
 		<div className="inputbar">
 			<input 
 			type="text"
-			placeholder ="Enter the task" 
-			className ="input"
-			onChange ={inpChange}
-			onKeyDown ={(event)=>{
-				if(event.key === "Enter")
+			placeholder="Enter the task"
+			value={inp}
+			onChange={e =>setInp(e.target.value)}
+			onKeyDown={e =>{
+				if(e.key ==="Enter")
 				{
-					taskInp();
+					handleAddToDo(inp);
+					setInp('');
 				}
 			}}
-			value ={inptext}
-			/>	
-
-			<div className="addtsk">
-				<button onClick ={taskInp}>ADD TASK</button>
-			</div>
+				/>
+			<button 
+			onClick={e =>
+				{
+					handleAddToDo(inp);
+					setInp('');	
+				}}
+			>
+			ADD TASK
+			</button>
 		</div>
 		);
-
 }
-
-export default inpbar;
