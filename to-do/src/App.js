@@ -32,8 +32,8 @@ export default function App(){
     <div className="body">
       <Heading/>
       <hr className="linebreak"/>
-      <InputBar handleAddToDo={handleAddToDo}/>
-      <Body doing={doing} completed={completed}/>
+      <InputBar handleAddToDo={handleAddToDo} />
+      <Body doing={doing} completed={completed} handleDelete={handleDelete}/>
     </div>
 
   );

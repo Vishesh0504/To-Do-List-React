@@ -6,7 +6,7 @@
 	font-size: 1.2em;
 }
 
-button{
+.inputbar>button{
 	font-size: 0.7em;
 	color:#00ce7c;
 	font-weight: 1000;
@@ -19,7 +19,7 @@ button{
 	transition: all 300ms ease-in-out;
 }
 
-button:hover{
+.inputbar>button:hover{
 	transform: scale(1.15);
 	background-color: #00ce7c;
 	color:black;
