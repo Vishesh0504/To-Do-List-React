@@ -20,10 +20,12 @@ export default function App(){
         ...doing,
         {id:nextId++, task:input,done:false},
         ])
-        console.log(doing);
-      }
+      }      
+  }
 
-      
+  function handleDelete(todoId){
+    setDoing(doing.filter(t => t.id !== todoId));
+    setCompleted(doing.filter(t => t.id !==todoId));
   }
 
   return(
