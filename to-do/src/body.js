@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import trash from "./trash.png";
-import edit from "./edit.png";
+import change from "./edit.png";
 import "./body.css";
 import "animate.css";
 
@@ -21,11 +21,9 @@ export default function body({doing,completed,handleEdit,handleDelete}){
 				<h1>Completed</h1>
 				{
 					completed.map(task => {
-						<>
 							<li key={task.id} className="list">
-								<Task task={task}/>
-							</li>
-						</>		
+								<Task task={task} handleDelete ={handleDelete}/>
+							</li>	
 					}
 			)
 		}
@@ -33,18 +31,23 @@ export default function body({doing,completed,handleEdit,handleDelete}){
 		</div>
 );
 	
-function Task({task}){
+function Task({task,handleDelete}){
 	const [edit,setEditing]=useState(false);
 	return(
-		<>
+		<div className="task">
 			<input
 			type="checkbox"
 			/>
 			{task.task}
-			<button>
-				<img src={trash}/>
-			</button>
-		</>
+			<div className="buttons">
+				<button>
+					<img src={change}/>
+				</button>
+				<button onClick = {()=>{handleDelete(task.id)}}>
+					<img src ={trash}/>
+				</button>
+			</div>	
+		</div>
 	);
 }
 }
