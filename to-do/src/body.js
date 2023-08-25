@@ -1,6 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState, useRef,useEffect} from 'react';
 import trash from "./trash.png";
-import change from "./edit.png";
+import edit from "./edit.png";
+import save from "./correct.png";
 import "./body.css";
 import "animate.css";
 
@@ -12,7 +13,7 @@ export default function body({doing,completed,handleEdit,handleDelete}){
 				<ul>	
 					{doing.map(task =>(
 							<li key={task.id} className="list">
-								<Task task={task} handleDelete ={handleDelete}/>
+								<Task task={task} onEdit={handleEdit} onDelete ={handleDelete}/>
 							</li>			
 					))}
 				</ul>
@@ -21,33 +22,87 @@ export default function body({doing,completed,handleEdit,handleDelete}){
 				<h1>Completed</h1>
 				{
 					completed.map(task => {
-							<li key={task.id} className="list">
-								<Task task={task} handleDelete ={handleDelete}/>
-							</li>	
+							return(
+							<>	
+								<li key={task.id} className="list">
+									<Task task={task} onDelete ={handleDelete}/>
+								</li>
+							</>
+							)	
 					}
 			)
 		}
 			</div>
 		</div>
 );
+}	
+function Task({task,onDelete,onEdit}){
+	const [editing,setEditing]=useState(false);
+	let todoContent;
+	const ref = useRef(null);
 	
-function Task({task,handleDelete}){
-	const [edit,setEditing]=useState(false);
+	useEffect(() => {
+    if (editing) {
+      ref.current.focus();
+    }
+  	}, [editing]);
+
+	if(editing)
+	{
+		todoContent =(
+			<>
+				<input
+				className="input"
+				ref = {ref}
+				value = {task.task}
+				onChange ={e => {
+					onEdit({
+						...task,
+						task: e.target.value,
+					})
+				}}/>
+				<button className="save" 
+				onClick={(e) =>
+				{
+					
+					if((task.task).length>0)
+					{
+						setEditing(false);
+					}
+					else{
+						alert("input field can't be empty");
+					}
+				}
+				}>
+					<img src={save} alt="save" />
+				</button>
+			</>	 
+	);
+}
+	else{
+		todoContent =(
+			<>
+				{task.task}
+				<button onClick={() =>{
+					setEditing(true);
+				}
+				}>
+					<img src={edit} alt="edit" />
+				</button>
+			</>	
+		);
+	}
+
 	return(
 		<div className="task">
 			<input
 			type="checkbox"
+			
 			/>
-			{task.task}
-			<div className="buttons">
-				<button>
-					<img src={change}/>
-				</button>
-				<button onClick = {()=>{handleDelete(task.id)}}>
-					<img src ={trash}/>
-				</button>
-			</div>	
+			{todoContent}
+			<button onClick = {()=>{onDelete(task.id)}}>
+				<img src ={trash} alt="delete" />
+			</button>	
 		</div>
 	);
-}
 }
