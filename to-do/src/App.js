@@ -28,12 +28,24 @@ export default function App(){
     setCompleted(doing.filter(t => t.id !==todoId));
   }
 
+  function handleEdit(todo){
+    setDoing(doing.map(t => {
+      if(t.id === todo.id)
+      {
+        return todo;
+      }
+      else
+      {
+        return t;
+      }
+    }))
+  }
   return(
     <div className="body">
       <Heading/>
       <hr className="linebreak"/>
       <InputBar handleAddToDo={handleAddToDo} />
-      <Body doing={doing} completed={completed} handleDelete={handleDelete}/>
+      <Body doing={doing} completed={completed} handleEdit={handleEdit} handleDelete={handleDelete}/>
     </div>
 
   );

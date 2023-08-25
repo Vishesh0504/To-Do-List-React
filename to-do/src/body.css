@@ -52,8 +52,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .list{
-	display: flex;
-	flex:wrap;
+	display:;
 	font-size: 1.2em;
 }
 
@@ -63,32 +62,35 @@ input[type="checkbox"]:checked::before {
 }
 
 .task{
-	display:flex;
-	flex:wrap;
+	display:grid;
+	grid-template-columns: auto 4fr auto auto;
+	padding:0.1em;
 }
 
-.buttons>button{
-	width:1.15em;
-	height:1.15em;
+.task>button{
+	width:1.2em;
+	height:1.2em;
 	margin-right: 0.3em;
-	transition: transform 300ms ease-in-out;
-	}	
-
-.buttons>button:hover{
-	transform:scale(1.2);
-}
-.list:hover .buttons{
-	opacity: 1;
-	
-}
-
-.buttons{
-	display:flex;
-	flex:wrap;
-	position: relative;
-	left:10em;
-	top:em;
 	opacity: 0;
 	transition: all 300ms ease-in-out;
+	}	
+
+.task>button:hover{
+	transform:scale(1.2);
+}
+.task:hover>button{
+	opacity: 1;
 }
 
+.save{
+	opacity:1;
+	width:10em;
+	transform:scale(0.9);
+}
+
+.input{
+	position: relative;
+	background-color: transparent;
+	width:98%;
+	border-radius: 5px;
+}
