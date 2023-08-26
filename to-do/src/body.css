@@ -52,8 +52,8 @@ input[type="checkbox"]:checked::before {
 }
 
 .list{
-	display:;
 	font-size: 1.2em;
+	list-style: none;
 }
 
 

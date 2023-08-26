@@ -21,17 +21,13 @@ export default function body({doing,completed,handleEdit,handleDelete,handleChec
 			<div className="completed">
 				<h1>Completed</h1>
 				{
-					completed.map(task => {
-							return(
-							<>	
+					completed.map(task =>(
 								<li key={task.id} className="list">
 									<Task task={task} onEdit={handleEdit} onDelete ={handleDelete} onCheck={handleCheck}/>
 								</li>
-							</>
 							)	
-					}
-			)
-		}
+					)
+			}
 			</div>
 		</div>
 );
