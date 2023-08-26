@@ -5,7 +5,7 @@ import save from "./correct.png";
 import "./body.css";
 import "animate.css";
 
-export default function body({doing,completed,handleEdit,handleDelete}){
+export default function body({doing,completed,handleEdit,handleDelete,handleCheck}){
 	return(
 		<div className="container">
 			<div className="doing">
@@ -13,7 +13,7 @@ export default function body({doing,completed,handleEdit,handleDelete}){
 				<ul>	
 					{doing.map(task =>(
 							<li key={task.id} className="list">
-								<Task task={task} onEdit={handleEdit} onDelete ={handleDelete}/>
+								<Task task={task} onEdit={handleEdit} onDelete ={handleDelete} onCheck={handleCheck}/>
 							</li>			
 					))}
 				</ul>
@@ -21,23 +21,20 @@ export default function body({doing,completed,handleEdit,handleDelete}){
 			<div className="completed">
 				<h1>Completed</h1>
 				{
-					completed.map(task => {
-							return(
-							<>	
+					completed.map(task =>(
 								<li key={task.id} className="list">
-									<Task task={task} onDelete ={handleDelete}/>
+									<Task task={task} onEdit={handleEdit} onDelete ={handleDelete} onCheck={handleCheck}/>
 								</li>
-							</>
 							)	
-					}
-			)
-		}
+					)
+			}
 			</div>
 		</div>
 );
 }	
-function Task({task,onDelete,onEdit}){
+function Task({task,onDelete,onEdit,onCheck}){
 	const [editing,setEditing]=useState(false);
+	const [check,setCheck ] =useState(false);
 	let todoContent;
 	const ref = useRef(null);
 	
@@ -46,6 +43,14 @@ function Task({task,onDelete,onEdit}){
       ref.current.focus();
     }
   	}, [editing]);
+
+	useEffect(() =>{
+		if(check)
+		{
+			onCheck(task);
+			setCheck(false);
+		}
+	},[onCheck,task,check]);
 
 	if(editing)
 	{
@@ -97,7 +102,14 @@ function Task({task,onDelete,onEdit}){
 		<div className="task">
 			<input
 			type="checkbox"
-			
+			checked={task.done}
+			onChange={(e)=>{
+				console.log(e.target.checked);
+				onEdit({...task,
+				done: e.target.checked,	
+			})
+			setCheck(true);
+			}}
 			/>
 			{todoContent}
 			<button onClick = {()=>{onDelete(task.id)}}>
