@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "//vishesh0504.github.io/To-Do-List-React/static/css/main.2462dbf6.css",
-    "main.js": "//vishesh0504.github.io/To-Do-List-React/static/js/main.b9468d01.js",
-    "static/js/787.c6a9a21d.chunk.js": "//vishesh0504.github.io/To-Do-List-React/static/js/787.c6a9a21d.chunk.js",
-    "static/media/correct.png": "//vishesh0504.github.io/To-Do-List-React/static/media/correct.51e12d697af8eeb5b833.png",
-    "static/media/edit.png": "//vishesh0504.github.io/To-Do-List-React/static/media/edit.38fd9122023085654ddf.png",
-    "index.html": "//vishesh0504.github.io/To-Do-List-React/index.html",
-    "main.2462dbf6.css.map": "//vishesh0504.github.io/To-Do-List-React/static/css/main.2462dbf6.css.map",
-    "main.b9468d01.js.map": "//vishesh0504.github.io/To-Do-List-React/static/js/main.b9468d01.js.map",
-    "787.c6a9a21d.chunk.js.map": "//vishesh0504.github.io/To-Do-List-React/static/js/787.c6a9a21d.chunk.js.map"
+    "main.css": "/To-Do-List-React/static/css/main.2462dbf6.css",
+    "main.js": "/To-Do-List-React/static/js/main.459199cb.js",
+    "static/js/787.c6a9a21d.chunk.js": "/To-Do-List-React/static/js/787.c6a9a21d.chunk.js",
+    "static/media/correct.png": "/To-Do-List-React/static/media/correct.51e12d697af8eeb5b833.png",
+    "static/media/edit.png": "/To-Do-List-React/static/media/edit.38fd9122023085654ddf.png",
+    "index.html": "/To-Do-List-React/index.html",
+    "main.2462dbf6.css.map": "/To-Do-List-React/static/css/main.2462dbf6.css.map",
+    "main.459199cb.js.map": "/To-Do-List-React/static/js/main.459199cb.js.map",
+    "787.c6a9a21d.chunk.js.map": "/To-Do-List-React/static/js/787.c6a9a21d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2462dbf6.css",
-    "static/js/main.b9468d01.js"
+    "static/js/main.459199cb.js"
   ]
 }
