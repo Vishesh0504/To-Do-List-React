@@ -4,6 +4,7 @@ import React,{ useState,useEffect} from 'react';
 import InputBar from "./inputbar";
 import Heading from "./heading";
 import Body from "./body";
+import Time from "./time";
 
 
 let nextId=0;
@@ -85,13 +86,15 @@ export default function App(){
     
   }
   return(
-    <div className="body">
-      <Heading handleEnter={handleEnter}/>
-      <hr className="linebreak"/>
-      <InputBar handleAddToDo={handleAddToDo} heading={heading} setHeading ={setHeading}/>
-      <Body doing={doing} completed={completed} handleEdit={handleEdit} handleDelete={handleDelete} handleCheck={handleCheck}/>
-    </div>
-
+    <div className="page">
+      <Time />
+      <div className="body">
+        <Heading handleEnter={handleEnter}/>
+        <hr className="linebreak"/>
+        <InputBar handleAddToDo={handleAddToDo} heading={heading} setHeading ={setHeading}/>
+        <Body doing={doing} completed={completed} handleEdit={handleEdit} handleDelete={handleDelete} handleCheck={handleCheck}/>
+      </div>
+     </div> 
   );
 }
 

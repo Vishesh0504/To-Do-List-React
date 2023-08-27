@@ -68,7 +68,7 @@ function Task({task,onDelete,onEdit,onCheck}){
 				}}
 
 				onKeyDown ={e=> {
-					if(e.key ==="Enter")
+					if(e.key ==="Enter" || e.key ==="Escape")
 					{
 						onEdit({
 							...task,
@@ -125,7 +125,9 @@ function Task({task,onDelete,onEdit,onCheck}){
 			}}
 			/>
 			{todoContent}
-			<button onClick = {()=>{onDelete(task.id)}}>
+			<button onClick = {()=>{
+				setTimeout(()=>{
+					onDelete(task.id)},1000)}}>
 				<img src ={trash} alt="delete" />
 			</button>	
 		</div>

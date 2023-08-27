@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.page{
+	width:100vw;
+}
+
 body{
+	
 	background-color: #060608;
 	color:#fff;
 	font-family: 'Bricolage Grotesque', sans-serif;
@@ -10,9 +15,9 @@ body{
 }
 
 .body{
-	position: absolute;
-	top:6em;
-	left:12em;
+	position: relative;
+	top:8em;
+	left:14em;
 }
 
 .linebreak{
@@ -21,8 +26,5 @@ body{
 	border-color: #009f60;
 }
 
-button:active{
-	trasndorm:scale(0.3);
-}
 
 
