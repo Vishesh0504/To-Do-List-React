@@ -12,7 +12,7 @@ export default function body({doing,completed,handleEdit,handleDelete,handleChec
 				<h1>To-Do</h1>
 				<ul>	
 					{doing.map(task =>(
-							<li key={task.id} className="list">
+							<li className="list" key={task.id} >
 								<Task task={task} onEdit={handleEdit} onDelete ={handleDelete} onCheck={handleCheck}/>
 							</li>			
 					))}
@@ -22,7 +22,7 @@ export default function body({doing,completed,handleEdit,handleDelete,handleChec
 				<h1>Completed</h1>
 				{
 					completed.map(task =>(
-								<li key={task.id} className="list">
+								<li className="list" key={task.id} >
 									<Task task={task} onEdit={handleEdit} onDelete ={handleDelete} onCheck={handleCheck}/>
 								</li>
 							)	
@@ -113,7 +113,7 @@ function Task({task,onDelete,onEdit,onCheck}){
 	}
 
 	return(
-		<div className="task">
+		<div className="task animate__animated animate__fadeInLeft  ">
 			<input
 			type="checkbox"
 			checked={task.done}

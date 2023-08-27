@@ -93,4 +93,6 @@ input[type="checkbox"]:checked::before {
 	background-color: transparent;
 	width:98%;
 	border-radius: 5px;
+	outline: 2px solid #ba8af5;
+	padding-left: 0.2em;
 }

@@ -1,6 +1,6 @@
 import 'animate.css';
 import './App.css';
-import React,{ useState} from 'react';
+import React,{ useState,useEffect} from 'react';
 import InputBar from "./inputbar";
 import Heading from "./heading";
 import Body from "./body";
@@ -8,12 +8,18 @@ import Body from "./body";
 
 let nextId=0;
 
+
+
 export default function App(){
   const [doing,setDoing] = useState([]);
   const [completed,setCompleted] =useState([]);
 
   const [heading,setHeading] = useState(false);
   
+  useEffect(() =>{
+  console.log(doing);
+  console.log(completed);
+  },[doing,completed]);
 
   function handleEnter(){
     setHeading(true);
@@ -30,12 +36,13 @@ export default function App(){
   }
 
   function handleDelete(todoId){
+    console.log(todoId);
     setDoing(doing.filter(t => t.id !== todoId));
-    setCompleted(doing.filter(t => t.id !==todoId));
+    setCompleted(completed.filter(t => t.id !==todoId));
   }
 
   function handleEdit(todo){
-    console.log(todo);
+    console.log("editing");
     setDoing(doing.map(t => {
       if(t.id === todo.id)
       {
