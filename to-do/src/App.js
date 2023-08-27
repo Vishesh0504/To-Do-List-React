@@ -36,13 +36,11 @@ export default function App(){
   }
 
   function handleDelete(todoId){
-    console.log(todoId);
     setDoing(doing.filter(t => t.id !== todoId));
     setCompleted(completed.filter(t => t.id !==todoId));
   }
 
   function handleEdit(todo){
-    console.log("editing");
     setDoing(doing.map(t => {
       if(t.id === todo.id)
       {
@@ -69,7 +67,6 @@ export default function App(){
 
   function handleCheck(todo)
   {
-    console.log(todo);
     if(todo.done)
     {
       setDoing(doing.filter(t => t.id !== todo.id));
