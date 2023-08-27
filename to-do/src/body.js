@@ -65,7 +65,21 @@ function Task({task,onDelete,onEdit,onCheck}){
 						...task,
 						task: e.target.value,
 					})
-				}}/>
+				}}
+
+				onKeyDown ={e=> {
+					if(e.key ==="Enter")
+					{
+						onEdit({
+							...task,
+							task:e.target.value,
+						})
+						setEditing(false);
+					}
+				}
+
+				}
+				/>
 				<button className="save" 
 				onClick={(e) =>
 				{
