@@ -12,7 +12,7 @@ export default function body({doing,completed,handleEdit,handleDelete,handleChec
 				<h1>To-Do</h1>
 				<ul>	
 					{doing.map(task =>(
-							<li key={task.id} className="list">
+							<li className="list" key={task.id} >
 								<Task task={task} onEdit={handleEdit} onDelete ={handleDelete} onCheck={handleCheck}/>
 							</li>			
 					))}
@@ -22,7 +22,7 @@ export default function body({doing,completed,handleEdit,handleDelete,handleChec
 				<h1>Completed</h1>
 				{
 					completed.map(task =>(
-								<li key={task.id} className="list">
+								<li className="list" key={task.id} >
 									<Task task={task} onEdit={handleEdit} onDelete ={handleDelete} onCheck={handleCheck}/>
 								</li>
 							)	
@@ -39,10 +39,10 @@ function Task({task,onDelete,onEdit,onCheck}){
 	const ref = useRef(null);
 	
 	useEffect(() => {
-    if (editing) {
-      ref.current.focus();
-    }
-  	}, [editing]);
+	    if (editing) {
+	      ref.current.focus();
+	    }
+	  	}, [editing]);
 
 	useEffect(() =>{
 		if(check)
@@ -65,7 +65,21 @@ function Task({task,onDelete,onEdit,onCheck}){
 						...task,
 						task: e.target.value,
 					})
-				}}/>
+				}}
+
+				onKeyDown ={e=> {
+					if(e.key ==="Enter")
+					{
+						onEdit({
+							...task,
+							task:e.target.value,
+						})
+						setEditing(false);
+					}
+				}
+
+				}
+				/>
 				<button className="save" 
 				onClick={(e) =>
 				{
@@ -99,12 +113,11 @@ function Task({task,onDelete,onEdit,onCheck}){
 	}
 
 	return(
-		<div className="task">
+		<div className="task animate__animated animate__fadeInLeft  ">
 			<input
 			type="checkbox"
 			checked={task.done}
 			onChange={(e)=>{
-				console.log(e.target.checked);
 				onEdit({...task,
 				done: e.target.checked,	
 			})
