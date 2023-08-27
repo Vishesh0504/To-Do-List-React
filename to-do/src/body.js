@@ -39,10 +39,10 @@ function Task({task,onDelete,onEdit,onCheck}){
 	const ref = useRef(null);
 	
 	useEffect(() => {
-    if (editing) {
-      ref.current.focus();
-    }
-  	}, [editing]);
+	    if (editing) {
+	      ref.current.focus();
+	    }
+	  	}, [editing]);
 
 	useEffect(() =>{
 		if(check)
@@ -104,7 +104,6 @@ function Task({task,onDelete,onEdit,onCheck}){
 			type="checkbox"
 			checked={task.done}
 			onChange={(e)=>{
-				console.log(e.target.checked);
 				onEdit({...task,
 				done: e.target.checked,	
 			})

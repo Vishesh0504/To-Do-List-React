@@ -1,6 +1,6 @@
 import 'animate.css';
 import './App.css';
-import React,{ useState,useEffect } from 'react';
+import React,{ useState} from 'react';
 import InputBar from "./inputbar";
 import Heading from "./heading";
 import Body from "./body";
@@ -11,11 +11,14 @@ let nextId=0;
 export default function App(){
   const [doing,setDoing] = useState([]);
   const [completed,setCompleted] =useState([]);
-  useEffect(() => {
-  console.log(doing);
-}, [doing]);
 
+  const [heading,setHeading] = useState(false);
   
+
+  function handleEnter(){
+    setHeading(true);
+  }
+
   function handleAddToDo(input){
       if(input.length>0)
       {
@@ -79,9 +82,9 @@ export default function App(){
   }
   return(
     <div className="body">
-      <Heading/>
+      <Heading handleEnter={handleEnter}/>
       <hr className="linebreak"/>
-      <InputBar handleAddToDo={handleAddToDo} />
+      <InputBar handleAddToDo={handleAddToDo} heading={heading} setHeading ={setHeading}/>
       <Body doing={doing} completed={completed} handleEdit={handleEdit} handleDelete={handleDelete} handleCheck={handleCheck}/>
     </div>
 

@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import "./heading.css";
 
-export default function Heading(){
+export default function Heading({handleEnter}){
 	let [title, setTitle] = useState('');
 
 	return(
@@ -9,8 +9,18 @@ export default function Heading(){
 			<input
 			type = "text"
 			placeholder ="Untitled"
+			value={title}
 			onChange = {
 				(e)=>{setTitle(title=e.target.value)}
+			}
+			onKeyDown ={
+				(e)=>
+				{
+					if(e.key === "Enter")
+					{
+						handleEnter();
+					}
+				}
 			}
 			/>
 		</div>
