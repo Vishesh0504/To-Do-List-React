@@ -1,0 +1,34 @@
+.dateandtime{
+	display: flex;
+	position: absolute;
+	top:1.5em;
+	left:40%;
+	
+}
+
+p{
+	width:10em;
+	height:4em;
+}
+
+.day{
+	font-size: 1.33em;
+	position: relative;
+	left:4em;
+	background: -webkit-linear-gradient(#9578d3, #eee);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+  	;
+}
+
+
+.time{
+	font-size: 4em;
+	position: relative;
+	top:0.25em;
+	left:-2.3em;
+	background: -webkit-linear-gradient(#9578d3, #eee);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+  	;
+}

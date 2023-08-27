@@ -82,10 +82,12 @@ input[type="checkbox"]:checked::before {
 	opacity: 1;
 }
 
-.save{
-	opacity:1;
-	width:10em;
-	transform:scale(0.9);
+.task> button:active{
+	transform: scale(0.9);
+}
+
+.input:focus button{
+	opacity: 1;
 }
 
 .input{

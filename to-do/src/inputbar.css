@@ -21,9 +21,14 @@
 
 .inputbar>button:hover{
 	transform: scale(1.15);
-	background-color: #00ce7c;
+/*	background-color: #00ce7c;*/
+	background-image: linear-gradient(to right,#9578d3,#00ce7c);
 	color:black;
 	border-radius: 0.5em;
+}
+
+.inputbar>button:active{
+	transform:scale(0.9);
 }
 
 .inputbar{
