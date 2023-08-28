@@ -86,15 +86,13 @@ export default function App(){
     
   }
   return(
-    <div className="page">
-      <Time />
       <div className="body">
+      <Time />
         <Heading handleEnter={handleEnter}/>
         <hr className="linebreak"/>
         <InputBar handleAddToDo={handleAddToDo} heading={heading} setHeading ={setHeading}/>
         <Body doing={doing} completed={completed} handleEdit={handleEdit} handleDelete={handleDelete} handleCheck={handleCheck}/>
       </div>
-     </div> 
   );
 }
 
