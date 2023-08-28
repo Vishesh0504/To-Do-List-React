@@ -21,7 +21,6 @@
 
 .inputbar>button:hover{
 	transform: scale(1.15);
-/*	background-color: #00ce7c;*/
 	background-image: linear-gradient(to right,#9578d3,#00ce7c);
 	color:black;
 	border-radius: 0.5em;
@@ -39,11 +38,11 @@
 	left:0.7em;
 	padding:0.5em;
 	margin-bottom:3em;
-	border:0.3rem solid #9578d3;
+	border:0.3rem solid #571dc2;
 	border-radius:0.4em ;
 	caret-color: #00ce7c;
 	transition: all 300ms ease-in-out;
 	box-shadow: 
-            2px 4px 8px 0px rgba(187, 134, 252,0.3),
-            2px 4px 16px 0px rgba(187, 134, 252,0.3);
+            2px 4px 8px 0px rgba(187, 134, 252,0.2),
+            2px 4px 16px 0px rgba(187, 134, 252,0.2);
 }

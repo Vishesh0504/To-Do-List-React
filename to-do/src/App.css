@@ -1,23 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.page{
-	width:100vw;
-}
+
 
 body{
-	
 	background-color: #060608;
 	color:#fff;
 	font-family: 'Bricolage Grotesque', sans-serif;
 	font-size:1.4rem;
-
+	margin:0;
+	padding:0;
+	widt:100vw;
+	background: 
+	linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+    ),url("bg5.jpg");
+    background-size: cover;
+    background-position:0% 20%;
 }
 
 .body{
 	position: relative;
-	top:8em;
+	top:1.5em;
 	left:14em;
+	width:80%;
 }
 
 .linebreak{

@@ -1,20 +1,16 @@
 .dateandtime{
-	display: flex;
-	position: absolute;
-	top:1.5em;
-	left:40%;
-	
+	display: grid;
+	grid-template-columns:1fr;
+	grid-template-rows: auto auto;
+	margin-bottom: -1.5em;
 }
 
-p{
-	width:10em;
-	height:4em;
-}
 
 .day{
+	display: flex;
+	text-align: center;
+	padding-left: 39.8%;
 	font-size: 1.33em;
-	position: relative;
-	left:4em;
 	background: -webkit-linear-gradient(#9578d3, #eee);
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
@@ -22,11 +18,14 @@ p{
 }
 
 
+
 .time{
-	font-size: 4em;
+	display: flex;
+	text-align: center;
+	padding-left: 40%;
 	position: relative;
-	top:0.25em;
-	left:-2.3em;
+	top:-0.3em;
+	font-size: 4em;
 	background: -webkit-linear-gradient(#9578d3, #eee);
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;

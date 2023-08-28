@@ -65,6 +65,7 @@ input[type="checkbox"]:checked::before {
 	display:grid;
 	grid-template-columns: auto 4fr auto auto;
 	padding:0.1em;
+	width:35vw;
 }
 
 .task>button{
@@ -78,6 +79,7 @@ input[type="checkbox"]:checked::before {
 .task>button:hover{
 	transform:scale(1.2);
 }
+
 .task:hover>button{
 	opacity: 1;
 }
