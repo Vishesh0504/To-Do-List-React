@@ -1,0 +1,30 @@
+.navbar{
+	position: relative;
+	top:1.5em;
+	display: flex;
+	margin-bottom: 1.5em;
+	background-color: #01101f;
+	color:#03bdbd;
+	width: 78vw;
+	font-size: 1.3em;
+	text-align: center;
+	justify-content: center;
+	padding:0.3em;
+	border-radius: 0.3em;
+	font-weight: bolder;
+}
+
+.navbar_light{
+	background-color: #ffdab9;
+	color:#000080;
+}
+
+.dark>img{
+	widht:1.2em;
+	height:1.2em;
+}
+
+.dark{
+	position:relative;
+	left:20.5em;
+}

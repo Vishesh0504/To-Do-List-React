@@ -2,8 +2,10 @@
 .heading{
 	position: relative;
 	font-size: 2em;
-	padding-bottom:0.3em;
-	caret-color: #9578d3;
+	padding-bottom:0.2em;
+	caret-color: #06f980;
+	border-bottom: 0.18em solid #ba8af5;
+	margin-bottom: 0.2em;
 }
 
 .heading > input{
