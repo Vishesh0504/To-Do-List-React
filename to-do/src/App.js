@@ -4,23 +4,20 @@ import React,{ useState,useEffect} from 'react';
 import InputBar from "./inputbar";
 import Heading from "./heading";
 import Body from "./body";
-import Time from "./time";
-
+import Navbar from "./navbar";
 
 let nextId=0;
-
-
 
 export default function App(){
   const [doing,setDoing] = useState([]);
   const [completed,setCompleted] =useState([]);
-
   const [heading,setHeading] = useState(false);
-  
-  useEffect(() =>{
-  console.log(doing);
-  console.log(completed);
-  },[doing,completed]);
+  const [dark,setDark] = useState(true);
+
+  // useEffect(() =>{
+  // console.log(doing);
+  // console.log(completed);
+  // },[doing,completed]);
 
   function handleEnter(){
     setHeading(true);
@@ -86,12 +83,11 @@ export default function App(){
     
   }
   return(
-      <div className="body">
-      <Time />
+      <div className={`body ${!dark? 'body_light' : ''}`}>
+      <Navbar setDark={setDark} dark={dark}/>
         <Heading handleEnter={handleEnter}/>
-        <hr className="linebreak"/>
-        <InputBar handleAddToDo={handleAddToDo} heading={heading} setHeading ={setHeading}/>
-        <Body doing={doing} completed={completed} handleEdit={handleEdit} handleDelete={handleDelete} handleCheck={handleCheck}/>
+        <InputBar handleAddToDo={handleAddToDo} heading={heading} setHeading ={setHeading} dark={dark}/>
+        <Body doing={doing} completed={completed} handleEdit={handleEdit} handleDelete={handleDelete} handleCheck={handleCheck} dark={dark}/>
       </div>
   );
 }

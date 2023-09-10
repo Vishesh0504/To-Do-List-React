@@ -1,7 +1,11 @@
 import React,{useState,useEffect} from 'react';
-import "./time.css";
+import "./navbar.css";
+import night from "./dark.png";
+import light from "./brightness.png";
 
-export default function Time(){
+
+
+export default function Navbar({setDark,dark}){
 	const [time,setTime] = useState(new Date());
 
 	useEffect(()=>{
@@ -16,20 +20,24 @@ export default function Time(){
 },[]);
 
 return(
-	<div className='dateandtime'>
+	<div className={`navbar ${ dark ?'':'navbar_light'}`}>
 		<p className='day'>{time.toLocaleString(undefined, {
     		weekday: 'short',
   		})} , {time.toLocaleDateString(undefined, {
     		month: 'short',
     		day: 'numeric',
-  		})}
-  		</p>
-  		<p className='time'>
-		{time.toLocaleTimeString([],{
+  		})}    {time.toLocaleTimeString([],{
 			hour: '2-digit',
 			minute:'2-digit',
 			hour12:false,
 		})}</p>
+		
+		<button className='dark'
+			onClick={() =>{setDark(!dark)}}
+		>
+			<img 
+			src={!dark ? night :light}/>
+		</button>
 	</div>
 	);
 }

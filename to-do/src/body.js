@@ -5,10 +5,10 @@ import save from "./correct.png";
 import "./body.css";
 import "animate.css";
 
-export default function body({doing,completed,handleEdit,handleDelete,handleCheck}){
+export default function body({doing,completed,handleEdit,handleDelete,handleCheck,dark}){
 	return(
 		<div className="container">
-			<div className="doing">
+			<div className={`tasks ${dark?'':'tasks_light'}`}>
 				<h1>To-Do</h1>
 				<ul>	
 					{doing.map(task =>(
@@ -18,7 +18,7 @@ export default function body({doing,completed,handleEdit,handleDelete,handleChec
 					))}
 				</ul>
 			</div>
-			<div className="completed">
+			<div className={`tasks ${dark?'':'tasks_light'}`}>
 				<h1>Completed</h1>
 				{
 					completed.map(task =>(
@@ -106,7 +106,7 @@ function Task({task,onDelete,onEdit,onCheck}){
 					setEditing(true);
 				}
 				}>
-					<img src={edit} alt="edit" />
+					<img src={edit} alt="edit" className="edit" />
 				</button>
 			</>	
 		);
@@ -120,10 +120,9 @@ function Task({task,onDelete,onEdit,onCheck}){
 			onChange={(e)=>{
 				onEdit({...task,
 				done: e.target.checked,	
-			})
+			});
 			setCheck(true);
-			}}
-			/>
+			}}/>
 			{todoContent}
 			<button onClick = {()=>{
 				setTimeout(()=>{

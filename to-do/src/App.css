@@ -3,35 +3,23 @@
 @tailwind utilities;
 
 
-body{
-	background-color: #060608;
-	color:#fff;
+.body{	
+	height: 100vh;
+	display: grid;
+	grid-template-rows:0.1fr 0.1fr 0.1fr auto ;
+	grid-gap: 1em;
+	justify-content: center;
+	background-color: #080808;
+	color:#fce2e2;
 	font-family: 'Bricolage Grotesque', sans-serif;
 	font-size:1.4rem;
-	margin:0;
-	padding:0;
-	widt:100vw;
-	background: 
-	linear-gradient(
-    rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)
-    ),url("bg5.jpg");
-    background-size: cover;
-    background-position:0% 20%;
 }
 
-.body{
-	position: relative;
-	top:1.5em;
-	left:14em;
-	width:80%;
+.body_light{
+	background-color: ivory;
+	color:black;
 }
 
-.linebreak{
-	width:70vw;
-	border-width: 0.25rem;
-	border-color: #009f60;
-}
 
 
 

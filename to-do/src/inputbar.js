@@ -1,7 +1,7 @@
 import React,{useState,useRef,useEffect} from 'react';
 import "./inputbar.css";
 
-export default function InputBar({handleAddToDo,heading,setHeading}){
+export default function InputBar({handleAddToDo,heading,setHeading,dark}){
 	const [inp,setInp] =useState('');
 	let inpRef = useRef(null);
 
@@ -14,7 +14,7 @@ export default function InputBar({handleAddToDo,heading,setHeading}){
   	},[heading,setHeading]);
 
 	return(
-		<div className="inputbar">
+		<div className={`inputbar ${dark?'':'inputbar_light'}`}>
 			<input 
 			type="text"
 			placeholder="Enter the task"

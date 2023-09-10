@@ -1,12 +1,14 @@
 .container{
 	display: grid;
-	grid-template-columns:1fr 1fr;
+	grid-template-columns:0.5fr 0.5fr;
+	grid-gap: 1em ;
 }
 
 h1{
 	font-size:1.5em;
-	color:#00ce7c;
+	color:#ba8af5;
 	margin-bottom: 0.3em;
+	font-weight:bolder;
 }
 
 
@@ -20,7 +22,7 @@ input[type="checkbox"]{
 	  color: currentColor;
 	  width: 1.16em;
 	  height: 1.15em;
-	  border: 0.15em solid #8C3AEE;
+	  border: 0.15em solid #B6EADA;
 	  border-radius: 0.15em;
 	  transform: translateY(0.075em);
 	  display: grid;
@@ -92,11 +94,31 @@ input[type="checkbox"]:checked::before {
 	opacity: 1;
 }
 
+
 .input{
 	position: relative;
 	background-color: transparent;
 	width:98%;
 	border-radius: 5px;
-	outline: 2px solid #ba8af5;
+	outline: 2px solid #7414eb;
 	padding-left: 0.2em;
+}
+
+.tasks{
+	background-color: #01101f;
+	color: #fee1e1;
+	border-radius: 1em;
+	height:55vh;
+	width:38vw;
+	padding-left: 1.4em;
+	padding-top:0.5em;
+}
+
+.tasks_light{
+		background-color: #ffdab9;
+		color:#000080;
+}
+
+.tasks_light>h1{
+	color:#000080;
 }

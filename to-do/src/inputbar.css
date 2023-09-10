@@ -1,27 +1,26 @@
 .inputbar > input{
 	border:none;
 	outline:none ;
-	position:relative;
+/*	position:relative;*/
 	background-color: transparent;
 	font-size: 1.2em;
 }
 
 .inputbar>button{
 	font-size: 0.7em;
-	color:#00ce7c;
+	color:#03bdbd;
 	font-weight: 1000;
 	background-color: transparent;
-	border:0.2em solid black;
+
 	padding:0.5em;
 	border-radius: 0.5em;
-	margin-right: 0.3em;
 	transform:scale(1.2);
 	transition: all 300ms ease-in-out;
 }
 
 .inputbar>button:hover{
 	transform: scale(1.15);
-	background-image: linear-gradient(to right,#9578d3,#00ce7c);
+	background-image: linear-gradient(to right,#03bdbd,#06f980);
 	color:black;
 	border-radius: 0.5em;
 }
@@ -31,18 +30,16 @@
 }
 
 .inputbar{
-	position: relative;
-	display:inline-flex;
-	flex:wrap;
-	top:1.6em;
-	left:0.7em;
 	padding:0.5em;
-	margin-bottom:3em;
-	border:0.3rem solid #571dc2;
 	border-radius:0.4em ;
-	caret-color: #00ce7c;
+	width:25vw;
+	height: 3.1em;
+	background-color: #01101f;
+	caret-color: #06f980;
 	transition: all 300ms ease-in-out;
-	box-shadow: 
-            2px 4px 8px 0px rgba(187, 134, 252,0.2),
-            2px 4px 16px 0px rgba(187, 134, 252,0.2);
+}
+
+.inputbar_light{
+	background-color: #ffdab9;
+	caret-color: #025d30;
 }
